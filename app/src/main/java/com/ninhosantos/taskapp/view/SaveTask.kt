@@ -8,16 +8,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.ninhosantos.taskapp.components.CustomAppBar
-import com.ninhosantos.taskapp.components.CustomRadioButtons
-import com.ninhosantos.taskapp.components.CustomTextBox
-import com.ninhosantos.taskapp.components.Priority
-import com.ninhosantos.taskapp.ui.theme.Purple700
+import com.ninhosantos.taskapp.components.*
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun SaveTask(navController: NavController) {
-
 
     // Fields States
     val priority = Priority()
@@ -86,18 +81,18 @@ fun SaveTask(navController: NavController) {
                     CustomRadioButtons(
                         isSelected = priority.checkPriority(i),
                         index = i,
+
                         callBack = {
                             priority.changePriority(i)
                         })
             }
-            
-            // Button
-            Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
-                backgroundColor = Purple700
 
-            )) {
-                Text(text = "Save Task")
-            }
+            Spacer(modifier = Modifier.height(30.dp))
+
+            // Button
+            CustomButton(modifier = Modifier.fillMaxWidth().height(50.dp), label = "Save Task", callBack = {
+                navController.popBackStack()
+            })
         }
 
     }

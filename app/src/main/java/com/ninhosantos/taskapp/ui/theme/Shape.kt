@@ -14,3 +14,9 @@ val TextBoxShapes = Shapes(
     small = RoundedCornerShape(10.dp) ,
     large = RoundedCornerShape(30.dp)
 )
+
+
+val ButtonShapes = Shapes(
+    small = RoundedCornerShape(10.dp) ,
+    large = RoundedCornerShape(30.dp)
+)
