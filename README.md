@@ -6,7 +6,7 @@ TaskApp é um aplicativo para gerenciar tarefas pessoais, desenvolvido com o Jet
 
 ## Preview
 
-https://github.com/fagnerdossantos/TaskApp/assets/61123877/1afdb8ef-b463-493d-b0d7-def198982e27
+https://github.com/fagnerdossantos/TaskApp/assets/61123877/9a1aaee1-9b24-4a88-8173-663bbece39b5
 
 
 ## Funcionalidades
