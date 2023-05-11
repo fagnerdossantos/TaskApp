@@ -2,6 +2,8 @@ package com.ninhosantos.taskapp.view
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -39,7 +41,8 @@ fun SaveTask(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight()
-                .padding(horizontal = 30.dp),
+                .padding(horizontal = 30.dp)
+                .verticalScroll(rememberScrollState()),
 
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
@@ -90,7 +93,9 @@ fun SaveTask(navController: NavController) {
             Spacer(modifier = Modifier.height(30.dp))
 
             // Button
-            CustomButton(modifier = Modifier.fillMaxWidth().height(50.dp), label = "Save Task", callBack = {
+            CustomButton(modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp), label = "Save Task", callBack = {
                 navController.popBackStack()
             })
         }

@@ -10,19 +10,14 @@ import com.ninhosantos.taskapp.ui.theme.Yellow
 @Composable
 fun CustomRadioButtons(isSelected: Boolean, index: Int, callBack: () -> Unit) {
 
-    fun colorSet(index: Int) = when (index) {
-        0 -> Green
-        1 -> Yellow
-        else -> Red
-    }
 
     RadioButton(
 
         selected = isSelected, onClick = callBack,
         colors = RadioButtonDefaults.colors(
 
-            selectedColor = colorSet(index),
-            unselectedColor = colorSet(index)
+            selectedColor = Priority().colorSet(index),
+            unselectedColor = Priority().colorSet(index)
         )
     )
 }
@@ -39,9 +34,9 @@ class Priority {
         selectedIndex.value = index
     }
 
-    enum class Level {
-        Low,
-        Medium,
-        Hard
+    fun colorSet(index: Int) = when (index) {
+        0 -> Green
+        1 -> Yellow
+        else -> Red
     }
 }
