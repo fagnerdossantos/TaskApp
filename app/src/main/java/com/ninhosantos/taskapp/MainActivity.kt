@@ -8,7 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.ninhosantos.taskapp.ui.theme.TaskAppTheme
 import com.ninhosantos.taskapp.view.SaveTask
-import com.ninhosantos.taskapp.view.TaskList
+import com.ninhosantos.taskapp.view.TaskHome
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +19,9 @@ class MainActivity : ComponentActivity() {
                 // Navigation
                 val navController = rememberNavController()
 
-                NavHost(navController = navController, startDestination = "TaskList") {
+                NavHost(navController = navController, startDestination = "TaskHome") {
 
-                    composable(route = "TaskList") { TaskList(navController) }
+                    composable(route = "TaskHome") { TaskHome(navController) }
                     composable(route = "SaveTask") { SaveTask(navController) }
                 }
             }

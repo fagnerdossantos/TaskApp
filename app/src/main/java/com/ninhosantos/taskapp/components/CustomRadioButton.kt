@@ -3,6 +3,7 @@ package com.ninhosantos.taskapp.components
 import androidx.compose.material.RadioButton
 import androidx.compose.material.RadioButtonDefaults
 import androidx.compose.runtime.*
+import com.ninhosantos.taskapp.ui.theme.Black
 import com.ninhosantos.taskapp.ui.theme.Green
 import com.ninhosantos.taskapp.ui.theme.Red
 import com.ninhosantos.taskapp.ui.theme.Yellow
@@ -35,8 +36,9 @@ class Priority {
     }
 
     fun colorSet(index: Int) = when (index) {
-        0 -> Green
-        1 -> Yellow
+        0 -> Black
+        1 -> Green
+        2 -> Yellow
         else -> Red
     }
 }

@@ -21,10 +21,11 @@ fun TaskComponent(
     val description = taskList[position].text
     val priority = taskList[position].priority
 
-    val priorityStatus = when(priority) {
-        0 -> "Low"
-        1 -> "Medium"
-        2 -> "High"
+    val priorityStatus = when (priority) {
+        0 -> "No priority"
+        1 -> "Low"
+        2 -> "Medium"
+        3 -> "High"
         else -> ""
     }
 
@@ -83,12 +84,13 @@ fun TaskComponent(
                     }
             ) {}
 
-            DeleteButton(modifier =
-            Modifier.constrainAs(btnDelete) {
-                top.linkTo(txtDescription.bottom)
-                end.linkTo(parent.end, margin = 10.dp)
-                bottom.linkTo(parent.bottom, margin = 10.dp)
-            })
+            DeleteButton(
+                id = position, modifier =
+                Modifier.constrainAs(btnDelete) {
+                    top.linkTo(txtDescription.bottom)
+                    end.linkTo(parent.end, margin = 10.dp)
+                    bottom.linkTo(parent.bottom, margin = 10.dp)
+                })
         }
 
     }

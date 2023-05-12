@@ -11,11 +11,11 @@ import androidx.navigation.NavController
 import com.ninhosantos.taskapp.components.CustomAppBar
 import com.ninhosantos.taskapp.components.CustomFloatingButton
 import com.ninhosantos.taskapp.components.TaskComponent
-import com.ninhosantos.taskapp.model.TaskModel
+import com.ninhosantos.taskapp.viewmodel.TaskViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun TaskList(navController: NavController) {
+fun TaskHome(navController: NavController) {
 
     Scaffold(
 
@@ -27,11 +27,8 @@ fun TaskList(navController: NavController) {
 
     ) {
 
-        val taskList: MutableList<TaskModel> = mutableListOf(
-            TaskModel("First", "Description", 0),
-            TaskModel("Second", "Description", 1),
-            TaskModel("third", "Description", 2),
-            )
+        val listInstance = TaskViewModel.getInstance()
+        val taskList = listInstance.loadTask()
 
         // App Body
         LazyColumn {
