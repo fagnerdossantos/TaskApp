@@ -5,6 +5,7 @@ import androidx.compose.material.FloatingActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.ninhosantos.taskapp.R
 import com.ninhosantos.taskapp.ui.theme.Purple700

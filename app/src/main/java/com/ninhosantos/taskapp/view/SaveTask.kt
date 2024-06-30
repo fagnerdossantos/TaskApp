@@ -11,10 +11,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.ninhosantos.taskapp.components.*
+import com.ninhosantos.taskapp.model.TaskModel
+import com.ninhosantos.taskapp.viewmodel.TaskViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun SaveTask(navController: NavController) {
+
+    // Controller
+    val controller = TaskViewModel.getInstance()
 
     // Fields States
     val priority = Priority()
@@ -96,6 +101,7 @@ fun SaveTask(navController: NavController) {
             CustomButton(modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp), label = "Save Task", callBack = {
+                    controller.createTask(TaskModel(title = taskTitle, text = taskDescription, priority = 0))
                 navController.popBackStack()
             })
         }

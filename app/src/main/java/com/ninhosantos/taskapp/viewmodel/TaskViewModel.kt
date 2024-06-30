@@ -13,17 +13,6 @@ class TaskViewModel private constructor() {
 
     fun deleteTask(index: Int) = taskList.removeAt(index)
 
-    // Init Mock data
-    init {
-        taskList.addAll(
-            listOf(
-                TaskModel("First", "Description", 0),
-                TaskModel("Second", "Description", 1),
-                TaskModel("third", "Description", 2),
-                TaskModel("Fourth", "Description", 3),
-            )
-        )
-    }
 
 
     // Singleton
